@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,6 +28,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -157,6 +160,67 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void loginAdmin(View view) {
+        getLoginDetails();
+        if(TextUtils.isEmpty(username))
+        {
+            snackbar = Snackbar.make(view, "Login Error : Admin email is missing.", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }else if(TextUtils.isEmpty(password))
+        {
+            snackbar = Snackbar.make(view, "Login Error : Admin password is missing.", Snackbar.LENGTH_LONG);
+            snackbar.show();
+
+        }
+        else {
+            progressbar_background.setVisibility(View.VISIBLE);
+
+            firestore.collection(getApplicationContext().getResources().getString(R.string.UserProfileCollection))
+                    .document(getApplicationContext().getResources().getString(R.string.AdminLogin1))
+                    .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                            if(documentSnapshot.exists())
+                            {
+
+                                String emailId = documentSnapshot.getString("Email");
+                                String passwd = documentSnapshot.getString("Password");
+
+                                if(username.toString().equals(emailId))
+                                {
+                                    if(password.toString().equals(passwd))
+                                {
+
+                                    progressbar_background.setVisibility(View.GONE);
+                                    Intent i = new Intent(MainActivity.this, AdminDashboard.class);
+                                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(i);
+
+
+                                }else {
+                                        progressbar_background.setVisibility(View.GONE);
+                                    Toast.makeText(MainActivity.this, "Error : Admin password is wrong. ", Toast.LENGTH_LONG).show();
+
+                                }
+
+
+                                }else {
+                                    progressbar_background.setVisibility(View.GONE);
+                                    Toast.makeText(MainActivity.this, "Error : Admin email is wrong. ", Toast.LENGTH_LONG).show();
+
+                                }
+
+                            }else {
+                                Toast.makeText(MainActivity.this, " Error : No admin credentials are present in database! ", Toast.LENGTH_LONG).show();
+                            }
+
+
+                        }
+                    });
+
+
+        }
+
     }
 
     private void loginUser(View view) {

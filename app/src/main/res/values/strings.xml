@@ -10,11 +10,11 @@
     <string name="UserProfileCollection">UserDetail</string>
     <string name="NewMissingComplaint">NewMissingComplaint</string>
     <string name="NewCrimeComplaint">NewCrimeComplaint</string>
-    <string name="UserCartSubcollection">AddToCart</string>
+    <string name="AdminLogin1">AdminDetails1</string>
     <string name="title_activity_crime_complaint_dashboard">CrimeComplaintDashboard</string>
 
 
-<!--    <string name="google_api_key">AIzaSyBh03r-3u1a_VAx2VrWxt_m596wTm6HWGk</string>-->
+    <!--    <string name="google_api_key">AIzaSyBh03r-3u1a_VAx2VrWxt_m596wTm6HWGk</string>-->
 
 
     <!-- Strings used for fragments for navigation -->
@@ -24,11 +24,11 @@
     <string name="previous">Previous</string>
 
 
-
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_firestation">firestation_activity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

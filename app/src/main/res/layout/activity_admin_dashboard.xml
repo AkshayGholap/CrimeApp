@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminDashboard">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginHorizontal="10dp"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="0.8"
+                android:paddingLeft="20dp"
+                >
+                <TextView
+                    android:id="@+id/welcomeTextview_Admindashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:text="Hello,"
+                    android:textSize="22sp"
+                    android:textColor="@color/loginBtnColor"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/abhaya_libre_bold"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:text="Exxplore your dashboard..."
+                    android:textColor="@color/loginBtnColorlight"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/abhaya_libre_bold"
+                    />
+
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/logoutBtn_Admindashboard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:src="@drawable/baseline_logout_24"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:elevation="2dp"
+            android:background="@color/colorTextSecondary1"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            />
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/tabs_adminDashboard"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabIndicatorGravity="stretch"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabSelectedTextColor="@color/white"
+            app:tabIndicator="@drawable/tab_indicator"
+            app:tabIndicatorColor="@color/loginBtnColor"
+            app:tabTextColor="@color/loginBtnColorlight"
+            />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/viewPager2" />
+
+    </LinearLayout>
+</RelativeLayout>
