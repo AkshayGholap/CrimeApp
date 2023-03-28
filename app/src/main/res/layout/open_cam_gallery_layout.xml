@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:text="Choose option"
+        android:textColor="@color/loginBtnColorlight"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_margin="10dp"
+       />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="0.6"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
+    >
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical"
+        android:weightSum="1"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/cameraClick_profile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:src="@drawable/camera" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal"
+            android:text="Click" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0.5"
+        android:weightSum="1"
+
+
+        >
+        <ImageView
+            android:id="@+id/gallery_profile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@drawable/gallery"
+            android:layout_weight="0.6"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:text="Select"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+</LinearLayout>
+
+
+</LinearLayout>

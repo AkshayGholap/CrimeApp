@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signup_activity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/signupimage"
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Signup Here "
+                android:textSize="28dp"
+                android:textColor="@color/loginBtnColor"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:layout_marginTop="30dp"
+                />
+
+
+
+            <EditText
+                android:id="@+id/etSignupEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="15dp"
+                android:layout_marginHorizontal="35dp"
+                android:ems="10"
+                android:drawableStart="@drawable/baseline_person_24"
+                android:inputType="textEmailAddress"
+                android:hint="Email"
+                android:drawablePadding="12dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/custom_input_edittext_corneredbg"
+                android:elevation="10dp"
+                />
+            <EditText
+                android:id="@+id/etSignupPassword"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_input_edittext_corneredbg"
+                android:ems="10"
+                android:drawableStart="@drawable/baseline_pass_24"
+                android:inputType="textPassword"
+                android:drawablePadding="12dp"
+                android:hint="Password"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:elevation="10dp"
+                />
+            <EditText
+                android:id="@+id/etSignupConfirmPassword"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_input_edittext_corneredbg"
+                android:ems="10"
+                android:drawableStart="@drawable/baseline_pass_24"
+                android:inputType="textPassword"
+                android:drawablePadding="12dp"
+                android:hint="Confirm password"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:elevation="10dp"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/login_btn_bg"
+
+                />
+
+
+
+
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="horizontal"-->
+            <!--               android:gravity="center"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:padding="10dp"-->
+            <!--                >-->
+            <!--                <ImageView-->
+            <!--                    android:layout_width="30dp"-->
+            <!--                    android:layout_height="30dp"-->
+            <!--                    android:src="@drawable/baseline_person_24"-->
+            <!--                    />-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:text="Admin Login"-->
+            <!--                    android:textAlignment="center"-->
+            <!--                    android:gravity="center"-->
+            <!--                    />-->
+            <!--            </LinearLayout>-->
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/progressbar_RegisterUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="5dp"
+        android:layout_centerInParent="true"
+        >
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/progressbar_background"
+            />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
